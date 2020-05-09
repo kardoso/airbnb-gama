@@ -92,3 +92,49 @@ a.nav-signup:hover {
   border: 1px solid #ebebeb;
   box-shadow: 0px 2px 5px #cacaca;
 }
+
+.modal-content {
+  border-radius: 1rem;
+}
+
+.modal-title{
+  width: 100%;
+  text-align: center;
+}
+
+.login-modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+button.login-modal__button {
+  transition-duration: 200ms;
+  margin: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #a8a8a8;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.login-modal__button:hover {
+  transition-duration: 200ms;
+  box-shadow: 0px 0px 6px 4px #cacaca;
+}
+
+.login-modal__button p {
+  margin: 0;
+  width: 100%;
+}
+
+.login-modal__button i {
+  align-self: flex-start;
+}
+
+.modal-footer a {
+  color: #e5336b;
+}
