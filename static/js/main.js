@@ -54,6 +54,6 @@ window.onscroll = () => {
 }
 
 window.addEventListener('load', () => {
-  initMap()
-  setRooms(document)
+  let map = initMap()
+  setRooms(document, map)
 })

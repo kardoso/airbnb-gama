@@ -1,8 +1,10 @@
+import { addPlaceToMap } from './map.js'
+
 const ROOMS_API = 'https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72'
 const PLACES_API =
   'https://raw.githubusercontent.com/kelvins/Municipios-Brasileiros/master/json/municipios.json'
 
-export const setRooms = async (document) => {
+export const setRooms = async (document, map) => {
   await fetch(ROOMS_API)
     .then((response) => {
       return response.json()
@@ -10,40 +12,59 @@ export const setRooms = async (document) => {
     .then((rooms) => {
       var roomsDiv = document.getElementById('rooms')
       setRoomsCity(rooms).then((roomsWithCity) => {
-        console.log(roomsWithCity)
-        roomsWithCity.forEach((room) => {
-          var div = document.createElement('div')
-          div.className = 'card'
-          div.style.width = '18rem'
+        roomsWithCity.forEach(
+          ({ name, city_name, photo, price, lat, lng, property_type }) => {
+            photo = photo
+              .replace('xx_large', 'small')
+              .replace('x_large', 'small')
 
-          var name = document.createElement('p')
-          name.className = 'card-text'
-          name.classList.add('room-name')
-          name.innerHTML = `<b>${room.name}</b>`
+            var cardDiv = document.createElement('div')
+            cardDiv.className = 'card'
+            cardDiv.style.width = '18rem'
 
-          var type = document.createElement('p')
-          type.className = 'card-text'
-          type.innerHTML = `<i>${room.property_type}</i>`
+            var nameParagraph = document.createElement('p')
+            nameParagraph.className = 'card-text'
+            nameParagraph.classList.add('room-name')
+            nameParagraph.innerHTML = `<b>${name}</b>`
 
-          var price = document.createElement('p')
-          price.className = 'card-text'
-          price.innerHTML = `<b>R$${room.price}</b>/dia`
+            var cityParagraph = document.createElement('p')
+            cityParagraph.className = 'card-text'
+            cityParagraph.classList.add('room-city')
+            cityParagraph.innerHTML = `<b>${city_name}</b>`
 
-          var body = document.createElement('div')
-          body.className = 'card-body'
-          body.appendChild(name)
-          body.appendChild(type)
-          body.appendChild(price)
+            var typeParagraph = document.createElement('p')
+            typeParagraph.className = 'card-text'
+            typeParagraph.innerHTML = `<i>${property_type}</i>`
 
-          var img = document.createElement('img')
-          img.className = 'card-img-top'
-          img.src = room.photo.replace('xx_large', 'small')
-          img.alt = room.name
+            var priceParagraph = document.createElement('p')
+            priceParagraph.className = 'card-text'
+            priceParagraph.innerHTML = `<b>R$${price}</b>/dia`
 
-          div.appendChild(img)
-          div.appendChild(body)
-          roomsDiv.appendChild(div)
-        })
+            var bodyDiv = document.createElement('div')
+            bodyDiv.className = 'card-body'
+            bodyDiv.appendChild(nameParagraph)
+            bodyDiv.appendChild(cityParagraph)
+            bodyDiv.appendChild(typeParagraph)
+            bodyDiv.appendChild(priceParagraph)
+
+            var imgElement = document.createElement('img')
+            imgElement.className = 'card-img-top'
+            imgElement.src = photo
+            imgElement.alt = name
+
+            cardDiv.appendChild(imgElement)
+            cardDiv.appendChild(bodyDiv)
+            roomsDiv.appendChild(cardDiv)
+
+            addPlaceToMap(
+              map,
+              lat,
+              lng,
+              `${name}<br/>${city_name}<br/>
+            <img src='${photo}' alt='${name}'/>`
+            )
+          }
+        )
       })
     })
 }

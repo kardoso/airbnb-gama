@@ -9,11 +9,13 @@ export const initMap = () => {
     attribution:
       '&copy; Contribuidores do <a href="http://osm.org/copyright">OpenStreetMap</a>',
   }).addTo(map)
+
+  return map
 }
 
-export const addPlaceToMap = (latitude, longitude, city) => {
+export const addPlaceToMap = (map, latitude, longitude, marker_message) => {
   var muxiCoordinates = [latitude, longitude]
-  var muxiMarkerMessage = city
+  var muxiMarkerMessage = marker_message
 
   var muxiIconProperties = {
     iconUrl:
@@ -31,4 +33,3 @@ export const addPlaceToMap = (latitude, longitude, city) => {
     .addTo(map)
     .bindPopup(muxiMarkerMessage)
 }
-
