@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400&display=swap');
+
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Cabin, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue,
+    sans-serif;
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 10000;
+  background-color: #fff;
+  transition-duration: 200ms;
+}
+
+.header--fixed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  border-bottom: 1px solid #d4d4d4;
+  transition-duration: 200ms;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 80px;
+  width: 100%;
+  max-width: 1760px;
+}
+
+.header-content img {
+  height: 40px;
+  margin-right: 40px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+a.nav-option {
+  transition-duration: 200ms;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  transition-duration: 200ms;
+  width: 100%;
+}
+
+a.nav-option:hover {
+  transition-duration: 200ms;
+  background-color: #f2f2f2;
+}
+
+a.nav-signup {
+  padding: 0 18px;
+  transition-duration: 200ms;
+  border: 1px solid #ebebeb;
+  box-shadow: 0px 2px 3px #efefef;
+}
+
+a.nav-signup:hover {
+  transition-duration: 200ms;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  box-shadow: 0px 2px 5px #cacaca;
+}

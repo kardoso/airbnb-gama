@@ -7,10 +7,32 @@
   <link rel="sortcut icon" href="static/img/airbnblogo.png" type="image/png" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/normalize.css" />
+  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <title>Airbnb</title>
 </head>
 
 <body>
+  <header classe="header" id="header">
+    <div class="header-content">
+      <a href="#"><img src="static/img/airbnblogo.png" alt="logo"></a>
+      <div class="nav">
+        <ul>
+          <li><a href="#" class="nav-option" id="nav-language"><i class='fas fa-globe'></i><i
+                class='fas fa-sort-down'></i></a>
+          </li>
+          <li><a href="#" class="nav-option" id="nav-host-acm">Hospede em sua acomodação</a></li>
+          <li><a href="#" class="nav-option" id="nav-host-exp">Hospede uma experiência</a></li>
+          <li><a href="#" class="nav-option" id="nav-help">Ajuda</a></li>
+          <li><a href="#" class="nav-option" id="nav-login" class="btn btn-primary" data-toggle="modal"
+              data-target="#login-modal">Entrar</a></li>
+          <li><a href="#" class="nav-option nav-signup" class="btn btn-primary" data-toggle="modal"
+              data-target="#login-modal">Cadastre-se</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
   <!--            BOOTSTRAP                -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
