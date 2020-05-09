@@ -265,6 +265,13 @@ a.search-bar-button {
   flex-direction: column;
 }
 
+#map {
+  height: 40vh;
+  width: 100%;
+  margin: 20px;
+  border-radius: 8px;
+}
+
 @media (max-width: 860px) {
   header {
     display: none;

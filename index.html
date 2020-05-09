@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="static/css/normalize.css" />
   <link rel="stylesheet" href="static/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
   <title>Airbnb</title>
 </head>
 
@@ -49,6 +50,9 @@
         <input type="text" name="" id="search-input" placeholder="Para onde você vai?">
       </a>
       <a href="#" class="search-bar-button"><i class="fas fa-search"></i> Buscar</a>
+    </div>
+    <div id="map">
+      <!-- Map will be rendered here -->
     </div>
     <div class="row">
       <div class="col-md-12 rooms" id="rooms">
@@ -131,6 +135,7 @@
   </div>
   </div>
 
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
   <script type="module" src="static/js/main.js"></script>
 
   <!--            BOOTSTRAP                -->

@@ -1,4 +1,5 @@
 import { setRooms } from './loadRooms.js'
+import { initMap } from './map.js'
 
 document.addEventListener('click', function (evt) {
   if (evt.target.className.includes('experience-item')) {
@@ -53,5 +54,6 @@ window.onscroll = () => {
 }
 
 window.addEventListener('load', () => {
+  initMap()
   setRooms(document)
 })
