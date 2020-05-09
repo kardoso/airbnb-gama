@@ -97,7 +97,7 @@ a.nav-signup:hover {
   border-radius: 1rem;
 }
 
-.modal-title{
+.modal-title {
   width: 100%;
   text-align: center;
 }
@@ -137,4 +137,94 @@ button.login-modal__button:hover {
 
 .modal-footer a {
   color: #e5336b;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+  width: 100%;
+  max-width: 1760px;
+  background-color: #fff;
+}
+
+.container--header-space {
+  margin-top: 80px;
+}
+
+.experiences-menu {
+  align-self: flex-start;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+a.experience-item {
+  margin: 0 20px 10px 0;
+  padding-bottom: 6px;
+}
+
+a.experience-item:hover {
+  color: #7c7c7c;
+}
+
+.experience-item--active {
+  border-bottom: 2px solid #000;
+}
+
+.search-bar {
+  transition-duration: 200ms;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 58px;
+  box-shadow: 0px 2px 6px 2px #ebebeb;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  padding: 6px 12px;
+}
+
+.search-bar--active {
+  transition-duration: 200ms;
+  border-color: #000;
+}
+
+.search-bar-info {
+  width: 100%;
+  display: block;
+}
+
+.search-bar-info p,
+.search-bar-info input {
+  pointer-events: none;
+  font-size: 12px;
+  margin: 0;
+  color: #000;
+}
+
+.search-bar-info input {
+  font-size: 16px;
+  width: 100%;
+  border: 0px;
+  outline: none;
+  color: #777;
+}
+
+.search-bar-info input:placeholder {
+  color: #777;
+}
+
+a.search-bar-button {
+  width: 120px;
+  height: 42px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom right, #e61e4f, #d80666);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
