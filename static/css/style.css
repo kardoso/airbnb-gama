@@ -13,6 +13,7 @@ body {
   font-family: Cabin, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue,
     sans-serif;
   font-size: 16px;
+  height: 100vh;
 }
 
 header {
@@ -234,6 +235,7 @@ a.search-bar-button {
   flex-wrap: wrap;
   place-content: center;
   justify-content: space-around;
+  min-height: 45vh;
 }
 
 .room-name {
@@ -272,6 +274,54 @@ a.search-bar-button {
   border-radius: 8px;
 }
 
+footer {
+  margin-top: 20px;
+  min-height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  background-color: #f7f7f7;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  height: 100%;
+  width: 100%;
+  max-width: 1760px;
+  color: #000;
+}
+
+.footer-content * {
+  flex: 1 1 0px;
+  text-align: center;
+}
+
+.footer__text,
+.footer__disclaimer {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer__text {
+  text-align: left;
+  font-size: 16px;
+}
+
+.footer__social {
+  text-align: right;
+}
+
+.footer__social a {
+  color: #000;
+  font-size: 28px;
+  padding: 0 8px;
+}
+
+
 @media (max-width: 860px) {
   header {
     display: none;
@@ -304,6 +354,10 @@ a.search-bar-button {
 
   .card-img-top {
     max-height: 140px;
+  }
+
+  .footer-content {
+    flex-direction: column;
   }
 }
 
