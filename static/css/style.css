@@ -264,3 +264,49 @@ a.search-bar-button {
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 860px) {
+  header {
+    display: none;
+  }
+
+  .header--fixed {
+    display: none;
+  }
+
+  .container-fluid {
+    padding: 0;
+    width: 90%;
+  }
+
+  .rooms {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    max-width: 100vw;
+    min-height: 40vh;
+    padding: 10px;
+  }
+
+  .card {
+    display: block;
+    min-width: 240px;
+  }
+
+  .card-img-top {
+    max-height: 140px;
+  }
+}
+
+@media (max-width: 700px) {
+  .experiences-menu {
+    display: none;
+  }
+
+  .search-bar {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+}
