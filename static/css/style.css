@@ -228,3 +228,39 @@ a.search-bar-button {
   justify-content: center;
   align-items: center;
 }
+
+.rooms {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  justify-content: space-around;
+}
+
+.room-name {
+  font-size: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.card {
+  margin: 18px 12px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px 2px #ebebeb;
+  transition-duration: 200ms;
+}
+
+.card:hover {
+  box-shadow: 0px -1px 8px 8px #e0e0e0;
+  transition-duration: 200ms;
+}
+
+.card-img-top {
+  width: 100%;
+  max-height: 180px;
+}
+
+.login-modal-body {
+  display: flex;
+  flex-direction: column;
+}

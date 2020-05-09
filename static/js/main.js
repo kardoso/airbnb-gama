@@ -1,3 +1,5 @@
+import { setRooms } from './loadRooms.js'
+
 document.addEventListener('click', function (evt) {
   if (evt.target.className.includes('experience-item')) {
     let allElements = document.getElementsByClassName('experience-item')
@@ -14,4 +16,8 @@ document.addEventListener('click', function (evt) {
   } else {
     document.getElementById('search-bar').classList.remove('search-bar--active')
   }
+})
+
+window.addEventListener('load', () => {
+  setRooms(document)
 })
