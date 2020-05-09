@@ -4,7 +4,7 @@ const ROOMS_API = 'https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72'
 const PLACES_API =
   'https://raw.githubusercontent.com/kelvins/Municipios-Brasileiros/master/json/municipios.json'
 
-export const setRooms = async (document, map) => {
+export const setRooms = async (document, map, leaflet) => {
   await fetch(ROOMS_API)
     .then((response) => {
       return response.json()
@@ -57,6 +57,7 @@ export const setRooms = async (document, map) => {
             roomsDiv.appendChild(cardDiv)
 
             addPlaceToMap(
+              leaflet,
               map,
               lat,
               lng,

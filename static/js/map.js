@@ -1,19 +1,27 @@
-export const initMap = () => {
+export const initMap = (leaflet) => {
   var initialCoordinates = [-14, -50]
   var initialZoomLevel = 4
   // create a map in the "map" div, set the view to a given place and zoom
-  var map = L.map('map').setView(initialCoordinates, initialZoomLevel)
+  var map = leaflet.map('map').setView(initialCoordinates, initialZoomLevel)
 
   // add an OpenStreetMap tile layer
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution:
-      '&copy; Contribuidores do <a href="http://osm.org/copyright">OpenStreetMap</a>',
-  }).addTo(map)
+  leaflet
+    .tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; Contribuidores do <a href="http://osm.org/copyright">OpenStreetMap</a>',
+    })
+    .addTo(map)
 
   return map
 }
 
-export const addPlaceToMap = (map, latitude, longitude, marker_message) => {
+export const addPlaceToMap = (
+  leaflet,
+  map,
+  latitude,
+  longitude,
+  marker_message
+) => {
   var muxiCoordinates = [latitude, longitude]
   var muxiMarkerMessage = marker_message
 
@@ -25,11 +33,12 @@ export const addPlaceToMap = (map, latitude, longitude, marker_message) => {
     popupAnchor: [0, -50],
   }
 
-  var muxiIcon = L.icon(muxiIconProperties)
+  var muxiIcon = leaflet.icon(muxiIconProperties)
 
-  L.marker(muxiCoordinates, {
-    icon: muxiIcon,
-  })
+  leaflet
+    .marker(muxiCoordinates, {
+      icon: muxiIcon,
+    })
     .addTo(map)
     .bindPopup(muxiMarkerMessage)
 }
