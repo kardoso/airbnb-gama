@@ -18,6 +18,40 @@ document.addEventListener('click', function (evt) {
   }
 })
 
+window.onscroll = () => {
+  if (window.innerWidth >= 860) {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+      document.getElementById('header').classList.add('header--fixed')
+      document
+        .getElementById('main-container')
+        .classList.add('container--header-space')
+    } else {
+      document.getElementById('header').classList.remove('header--fixed')
+      document
+        .getElementById('main-container')
+        .classList.remove('container--header-space')
+    }
+
+    if (
+      document.body.scrollTop > 160 ||
+      document.documentElement.scrollTop > 160
+    ) {
+      document.getElementById('nav-host-acm').style.display = 'none'
+      document.getElementById('nav-host-exp').style.display = 'none'
+      document.getElementById('nav-login').style.display = 'none'
+    } else {
+      document.getElementById('nav-host-acm').style.display = 'inline-flex'
+      document.getElementById('nav-host-exp').style.display = 'inline-flex'
+      document.getElementById('nav-login').style.display = 'inline-flex'
+    }
+  } else {
+    document.getElementById('header').classList.remove('header--fixed')
+    document
+      .getElementById('main-container')
+      .classList.remove('container--header-space')
+  }
+}
+
 window.addEventListener('load', () => {
   setRooms(document)
 })
